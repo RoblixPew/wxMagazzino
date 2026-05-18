@@ -1,0 +1,23 @@
+#Compilatore/Librerie
+CXX = g++
+CXXFLAGS = `wx-config --cxxflags` -std=c++17
+LDFLAGS = `wx-config --libs`
+
+# Prende tutti i file .cpp nella cartella
+SRC = $(wildcard *.cpp)
+OBJ = $(SRC:.cpp=.o)
+#Nome dell'applicazione
+TARGET = Magazzino
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	@rm -f $(TARGET)       # rimuove l’output se esiste
+	$(CXX) -o $@ $^ $(LDFLAGS)
+
+# Compilazione dei file ogetto
+%.o: %.cpp
+	$(CXX) -c $< $(CXXFLAGS)
+
+# Pulizia
+clean:
+	rm -f $(OBJ) $(TARGET)
