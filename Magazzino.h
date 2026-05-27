@@ -4,14 +4,14 @@
 using namespace std;
 
 struct Prodotto {
-    string nomeprodotto[100];
-    double prezzo[100];
-    int quantita[100];
+    string nome;
+    double prezzo;
+    int quantita;
 };
 
 class Magazzino {
 public:
-    Prodotto p;
+    Prodotto p[100];
     int contap;
 
     Magazzino() {

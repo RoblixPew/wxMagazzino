@@ -5,7 +5,7 @@
 // PLEASE DO *NOT* EDIT THIS FILE!
 ///////////////////////////////////////////////////////////////////////////
 
-#include "MyProjectBase.h"
+#include "wxMagazzinoFrame.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +60,18 @@ m_MainFrame::m_MainFrame( wxWindow* parent, wxWindowID id, const wxString& title
 	gSizer1->Add( m_btnmodify, 0, wxALL, 5 );
 
 
+	gSizer1->Add( 0, 0, 1, wxEXPAND, 5 );
+
+
+	gSizer1->Add( 0, 0, 1, wxEXPAND, 5 );
+
+	m_salva = new wxButton( this, wxID_ANY, _("Salva Magazzino"), wxDefaultPosition, wxDefaultSize, 0 );
+	gSizer1->Add( m_salva, 0, wxALL, 5 );
+
+	m_importa = new wxButton( this, wxID_ANY, _("Importa Magazzino"), wxDefaultPosition, wxDefaultSize, 0 );
+	gSizer1->Add( m_importa, 0, wxALL, 5 );
+
+
 	this->SetSizer( gSizer1 );
 	this->Layout();
 
@@ -70,6 +82,8 @@ m_MainFrame::m_MainFrame( wxWindow* parent, wxWindowID id, const wxString& title
 	m_btnlist->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( m_MainFrame::ShowProductFrame ), NULL, this );
 	m_btnremove->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( m_MainFrame::RemoveProductFrame ), NULL, this );
 	m_btnmodify->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( m_MainFrame::ModifyProductFrame ), NULL, this );
+	m_salva->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( m_MainFrame::salvaa ), NULL, this );
+	m_importa->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( m_MainFrame::importaa ), NULL, this );
 }
 
 m_MainFrame::~m_MainFrame()
@@ -217,12 +231,12 @@ m_FrameAddProduct::m_FrameAddProduct( wxWindow* parent, wxWindowID id, const wxS
 	m_txtprezzoadd = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	gSizer2->Add( m_txtprezzoadd, 0, wxALL, 5 );
 
-	m_staticText4 = new wxStaticText( this, wxID_ANY, _("Quantità:"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText4 = new wxStaticText( this, wxID_ANY, _("Quantita:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText4->Wrap( -1 );
 	gSizer2->Add( m_staticText4, 0, wxALL, 5 );
 
-	m_txtquantitàadd = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	gSizer2->Add( m_txtquantitàadd, 0, wxALL, 5 );
+	m_txtquantitaadd = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	gSizer2->Add( m_txtquantitaadd, 0, wxALL, 5 );
 
 
 	gSizer2->Add( 0, 0, 1, wxEXPAND, 5 );

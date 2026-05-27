@@ -43,17 +43,21 @@ class m_MainFrame : public wxFrame
 		wxButton* m_btnlist;
 		wxButton* m_btnremove;
 		wxButton* m_btnmodify;
+		wxButton* m_salva;
+		wxButton* m_importa;
 
 		// Virtual event handlers, override them in your derived class
 		virtual void AddProductFrame( wxCommandEvent& event ) { event.Skip(); }
 		virtual void ShowProductFrame( wxCommandEvent& event ) { event.Skip(); }
 		virtual void RemoveProductFrame( wxCommandEvent& event ) { event.Skip(); }
 		virtual void ModifyProductFrame( wxCommandEvent& event ) { event.Skip(); }
+		virtual void salvaa( wxCommandEvent& event ) { event.Skip(); }
+		virtual void importaa( wxCommandEvent& event ) { event.Skip(); }
 
 
 	public:
 
-		m_MainFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 500,300 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		m_MainFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 547,300 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
 
 		~m_MainFrame();
 
@@ -124,7 +128,7 @@ class m_FrameAddProduct : public wxFrame
 		wxStaticText* m_staticText3;
 		wxTextCtrl* m_txtprezzoadd;
 		wxStaticText* m_staticText4;
-		wxTextCtrl* m_txtquantitàadd;
+		wxTextCtrl* m_txtquantitaadd;
 		wxButton* m_button5;
 
 		// Virtual event handlers, override them in your derived class
